@@ -1,3 +1,5 @@
+import 'package:cat_cafe/not_implemented_page.dart';
+import 'package:cat_cafe/settings_page.dart';
 import 'package:flutter/material.dart';
 
 import 'cat_details_page.dart';
@@ -56,6 +58,41 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
+        drawer: Drawer(
+            child: ListView(
+          children: [
+            ListTile(
+                title: const Text("Settings"),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SettingsPage()));
+                }),
+            ListTile(
+                title: const Text("Account"),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NotImplementedPage()));
+                }),
+            ListTile(
+                title: const Text("Cat Files"),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NotImplementedPage()));
+                }),
+            ListTile(
+                title: const Text("Cat Files"),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NotImplementedPage()));
+                }),
+            ListTile(
+                title: const Text("Upgrade"),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NotImplementedPage()));
+                }),
+          ],
+        )),
         body: ListView.builder(
             itemCount: cats.length,
             itemBuilder: (context, index) {
